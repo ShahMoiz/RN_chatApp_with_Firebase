@@ -1,31 +1,27 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import firebase from "firebase";
+import InitializeComponent from './src/components/initialize/initialize';
+import { Container } from 'native-base';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+var config = {
+  apiKey: "AIzaSyDDtDMgCefsB3eJJrrCqpR28Jt1p72SV2c",
+  authDomain: "rn-chatting-securly.firebaseapp.com",
+  databaseURL: "https://rn-chatting-securly.firebaseio.com",
+  projectId: "rn-chatting-securly",
+  storageBucket: "rn-chatting-securly.appspot.com",
+  messagingSenderId: "84611418572"
+};
+firebase.initializeApp(config);
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
+      <Container>
+        <InitializeComponent />
+      </Container>
+    )
   }
 }
 
