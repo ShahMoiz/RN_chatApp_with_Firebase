@@ -1,0 +1,3 @@
+rootProject.name = 'RN_chatApp_with_Firebase'
+
+include ':app'
