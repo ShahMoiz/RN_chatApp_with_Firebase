@@ -15,9 +15,9 @@ export default class InitializeComponent extends Component {
                 // goHome()
             }
             else {
-                goHome()
+                // goHome()
                 // alert("Hello")
-                // goAuth()
+                goAuth()
             }
         })
     }

@@ -14,8 +14,10 @@ const goAuth = () => {
                         component: {
                             name: 'signIn',
                             options: {
-                                text: 'signIn',
-                                icon: require('../../assets/logIn.png')
+                                bottomTab: {
+                                    text: 'signIn',
+                                    icon: require('../../assets/logIn.png')
+                                }
                             }
                         }
                     },
@@ -23,8 +25,10 @@ const goAuth = () => {
                         component: {
                             name: 'signUp',
                             options: {
-                                text: 'signUp',
-                                icon: require('../../assets/addUser.png')
+                                bottomTab: {
+                                    text: 'signUp',
+                                    icon: require('../../assets/addUser.png')
+                                }
                             }
                         }
                     }],
