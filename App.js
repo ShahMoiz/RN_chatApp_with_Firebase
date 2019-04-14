@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import {Platform, StyleSheet, Text, View} from 'react-native';
 import firebase from "firebase";
 import InitializeComponent from './src/components/initialize/initialize';
-import { Container, Content, Text } from 'native-base';
+import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 import SignInComponent from './src/components/signIn/signIn';
 
 var config = {
@@ -24,8 +24,20 @@ export default class App extends Component {
           <Text>
             Hello App.js
           </Text>
-          <SignInComponent />
         </Content>
+        <Footer>
+          <FooterTab>
+            <Button active>
+              <Icon active name="chatbubbles" />
+            </Button>
+            <Button>
+              <Icon name="person" />
+            </Button>
+            <Button>
+              <Icon name="settings" />
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     )
   }

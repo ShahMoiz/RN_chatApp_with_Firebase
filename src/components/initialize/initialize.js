@@ -5,11 +5,13 @@ import { Container, Text, Content, Spinner } from 'native-base';
 import goHome from '../../screens/homeScreen/homeScreen';
 import goAuth from '../../screens/authScreen/authScreen';
 // import console = require('console');
+// import console = require('console');
 
 // import { goHome, goAuth } from '../../screens/indexScreen'
 export default class InitializeComponent extends Component {
     componentDidMount(){
         firebase.auth().onAuthStateChanged(user => {
+            console.log("Initialize User", user)
             if(user) {
                 goHome()
                 // goHome()

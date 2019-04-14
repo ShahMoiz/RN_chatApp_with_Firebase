@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
-import { StyleSheet } from  'react-native'
+import firebase from 'firebase'
+import { StyleSheet, TouchableOpacity } from  'react-native'
 import { Container, Header, Left,Text, Body, Right, Button, Icon, Title, Content,Form, Item, Label, Input  } from 'native-base';
+// import console = require('console');
 // import console = require('console');
 
 export default class SignUpComponent extends Component {
     constructor(props) {
         super(props);
-        this.setState = {
+        this.state = {
             email: '',
             pass: '',
             rePass: ''
         }
     }
     signUp = () => {
-        console.log(this.state.email, this.state.pass, this.state.rePass)
+        const email = this.state.email;
+        const pass = this.state.pass;
+        const rePass = this.state.rePass;
+        if(pass === rePass) {
+        firebase.auth().createUserWithEmailAndPassword(email,pass).catch(err => {
+            alert(err.code);
+            console.log("Error Code", err.code);
+            console.log("Error Name", err.message)
+            return;
+        })
+        
+    }
+    else {
+        alert("pass or repass not same")
+    }
     }
     render() {
         return(
@@ -43,10 +59,13 @@ export default class SignUpComponent extends Component {
               <Label>Retype Password</Label>
               <Input secureTextEntry={true} onChangeText={text => this.setState({rePass: text}) }/>
             </Item>
-            <Button full bordered style={styles.formButton} onPress={this.signUp} >
+            
+          </Form>
+          <TouchableOpacity onPress={this.signUp}>
+            <Button full bordered style={styles.formButton} onPress={this.signUp}  >
             <Text>Sign Up</Text>
           </Button>
-          </Form>
+          </TouchableOpacity>
         </Content>
       </Container>
         )

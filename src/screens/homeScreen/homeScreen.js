@@ -4,15 +4,12 @@ const goHome = () => {
     Navigation.setRoot({
         root: {
             id: 'authScreen',
-            stack: {
-                children: [{
-                    component: {
-                        name: 'home'
-                    }
-                }]
+            component: {
+                name: 'home'
             }
-        }
-    })
+        
+            }
+        })
 }
 
 export default goHome
