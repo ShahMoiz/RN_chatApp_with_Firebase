@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+// import {Platform, StyleSheet, Text, View} from 'react-native';
 import firebase from "firebase";
 import InitializeComponent from './src/components/initialize/initialize';
-import { Container } from 'native-base';
+import { Container, Content, Text } from 'native-base';
+import SignInComponent from './src/components/signIn/signIn';
 
 var config = {
   apiKey: "AIzaSyDDtDMgCefsB3eJJrrCqpR28Jt1p72SV2c",
@@ -19,27 +20,13 @@ export default class App extends Component {
   render() {
     return (
       <Container>
-        <InitializeComponent />
+        <Content>
+          <Text>
+            Hello App.js
+          </Text>
+          <SignInComponent />
+        </Content>
       </Container>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
